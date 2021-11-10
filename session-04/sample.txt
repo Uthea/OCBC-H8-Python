@@ -1,0 +1,3 @@
+my first file
+the file
+contains three lines
