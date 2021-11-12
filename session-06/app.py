@@ -1,22 +1,25 @@
 def my_generator():
-  print("Inside my generator")
-  yield 'a'
-  yield 'b'
-  yield 'c'
+    print("Inside my generator")
+    yield 'a'
+    yield 'b'
+    yield 'c'
+
 
 my_generator()
 
-
 for char in my_generator():
-  print(char)
+    print(char)
+
 
 def counter_generator(low, high):
     while low <= high:
-       yield low
-       low += 1
+        yield low
+        low += 1
 
-for i in counter_generator(5,10):
-  print(i, end=' ')
+
+for i in counter_generator(5, 10):
+    print(i, end=' ')
+
 
 # def infinite_sequence():
 #     num = 0
@@ -31,8 +34,10 @@ for i in counter_generator(5,10):
 def say_hello(name):
     return f"Hello {name}"
 
+
 def be_awesome(name):
     return f"Yo {name}, together we are the awesomest!"
+
 
 def greet_bob(greeter_func):
     return greeter_func("Bob")
@@ -54,6 +59,7 @@ def parent():
 
     second_child()
     first_child()
+
 
 parent()
 
@@ -80,10 +86,13 @@ def my_decorator(func):
         print("Something is happening before the function is called.")
         func()
         print("Something is happening after the function is called.")
+
     return wrapper
+
 
 def say_whee():
     print("Whee!")
+
 
 say_whee = my_decorator(say_whee)
 
@@ -95,7 +104,9 @@ def my_decorator(func):
         print("Something is happening before the function is called.")
         func()
         print("Something is happening after the function is called.")
+
     return wrapper
+
 
 @my_decorator
 def say_whee():
@@ -104,6 +115,7 @@ def say_whee():
 
 import functools
 
+
 def decorator(func):
     @functools.wraps(func)
     def wrapper_decorator(*args, **kwargs):
@@ -111,8 +123,8 @@ def decorator(func):
         value = func(*args, **kwargs)
         # Do something after
         return value
-    return wrapper_decorator
 
+    return wrapper_decorator
 
 # import functools
 # import time
