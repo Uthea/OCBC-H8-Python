@@ -1,6 +1,6 @@
 from flask import jsonify
 from flask_pydantic import validate
-from flask_restx import Resource, Namespace, abort
+from flask_restx import Resource, Namespace, abort, marshal
 
 from practice_session import db
 from practice_session.api_model import avocado_response_model, avocado_body_model, avocado_update_model
@@ -35,7 +35,7 @@ class Avocado(Resource):
         db.session.add(new_avocado)
         db.session.commit()
 
-        return new_avocado
+        return marshal(new_avocado, avocado_response_model), 201
 
 
 @api.route('/avocado/<int:id>')
