@@ -1,7 +1,7 @@
 # INSTALLATION
 create new venv and then pip install -r requirements.txt
 
-#START THE PROGRAM
+# START THE PROGRAM
 in the current terminal/cmd run these command inside the session-10 folder
 
 ```jupyter
